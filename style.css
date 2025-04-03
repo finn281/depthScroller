@@ -5,8 +5,8 @@ body {
     overflow-x: hidden;
     /* Prevent vertical scrolling as we're simulating it now */
 
-    --bg-color: #ffffff;        /* White background */
-    --line-color: black;      /* Light grey lines (adjust for darkness) */
+    --bg-color: blue;        /* White background */
+    --line-color: white;      /* Light grey lines (adjust for darkness) */
     --line-width: 1px;          /* Line thickness */
     --line-spacing: 15px;       /* Distance between start of lines (adjust density) */
 
