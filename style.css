@@ -8,6 +8,25 @@ body {
   
 }
 
+
+#main-wrapper {
+    /* Sizing - Adjust as needed */
+    width: 90%; /* Example: Use 90% of the available width */
+    max-width: 1000px; /* Example: Don't exceed 1000 pixels */
+
+    /* Centering */
+    margin: auto; /* Example: 30px margin top/bottom, auto left/right centers it */
+
+    /* Styling - Add your desired styles */
+    border: 2px dotted black; /* Example border */
+   
+    
+
+    /* Ensure proper box model */
+    box-sizing: border-box;
+}
+
+
 #game-container {
     position: relative;
    
@@ -42,6 +61,7 @@ body {
  
     position: absolute;
     z-index: -1;
+    max-width: 100%;
 }
 
 .hidden {
@@ -60,6 +80,12 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden; /* Important to contain elements */
+  
+}
+
+
+#scroll-image {
+     max-width: 100%;
 }
 
 /* Styling for the new button */
