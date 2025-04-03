@@ -1,0 +1,76 @@
+/* Removed: html { scroll-behavior: smooth; } */
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    /* Prevent vertical scrolling as we're simulating it now */
+  
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh; /* Keeps initial view contained */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Important to contain elements */
+}
+
+#background-image {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+#action-link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Times New Roman", Times, serif;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 5px;
+    z-index: 500;
+}
+
+#descend-gif {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Styling for the scroll area container */
+#scroll-target-area {
+    /* Center content (like the GIF if it's not 100% width) */
+    text-align: center;
+    box-sizing: border-box;
+    /* Ensure it takes up width, height defined by content */
+    position: relative;
+    width: 100vw;
+    height: 100vh; /* Keeps initial view contained */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Important to contain elements */
+}
+
+/* Styling for the new button */
+#deeper-button {
+    position: absolute; /* Position relative to #scroll-target-area */
+    bottom: 30px;       /* Position near the bottom */
+    left: 50%;          /* Center horizontally */
+
+    cursor: pointer;
+    z-index: 10; /* Ensure button is above the image */
+}
