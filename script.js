@@ -69,3 +69,60 @@ deeperButton.addEventListener('click', function() {
 
     console.log("Deeper button clicked. Showing frame:", currentFrame);
 });
+
+
+
+
+
+
+// --- Part 3: Dialogue Window Elements & Functions ---
+const dialogueWindow = document.getElementById('dialogue-window');
+const dialogueText = document.getElementById('dialogue-text');
+const dialogueNextButton = document.getElementById('dialogue-next'); // Get button
+
+// Function to show the dialogue window with specific text
+function showDialogue(textToShow) {
+    if (dialogueWindow && dialogueText) {
+        dialogueText.textContent = textToShow; // Set the text
+        dialogueWindow.classList.remove('hidden'); // Make window visible
+        console.log("Showing dialogue:", textToShow);
+    } else {
+        console.error("Dialogue window elements not found!");
+    }
+}
+
+// Function to hide the dialogue window
+function hideDialogue() {
+    if (dialogueWindow) {
+        dialogueWindow.classList.add('hidden'); // Hide window
+        console.log("Hiding dialogue.");
+    }
+}
+
+// Example: Event listener for the 'Next' button to hide the dialogue
+// (You'll likely replace this with logic to show the *next* line of dialogue)
+if (dialogueNextButton) {
+    dialogueNextButton.addEventListener('click', function() {
+        // For now, just hide it. Later, this could load the next line.
+        hideDialogue();
+        console.log("Dialogue 'Next' button clicked.");
+    });
+}
+
+// --- How to Use (Examples - Don't add these directly unless testing) ---
+// You would call these functions from your game logic when needed.
+// Example 1: Show a message immediately for testing (uncomment to test)
+document.addEventListener('DOMContentLoaded', () => {
+    showDialogue("That gate seems to lead outside!");
+ });
+
+// Example 2: Show dialogue when something is clicked (e.g., the background)
+// const backgroundImage = document.getElementById('background-image');
+// if (backgroundImage) {
+//     backgroundImage.addEventListener('click', () => {
+//         showDialogue("You clicked the background. It looks old.");
+//     });
+// }
+
+// --- Make sure dialogue starts hidden (redundant if class is in HTML, but safe) ---
+// hideDialogue(); // Call once at start if not hidden by default in HTML
