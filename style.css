@@ -4,8 +4,31 @@ body {
     margin: 0;
     overflow-x: hidden;
     /* Prevent vertical scrolling as we're simulating it now */
-    margin: 
-  
+
+    --bg-color: #ffffff;        /* White background */
+    --line-color: black;      /* Light grey lines (adjust for darkness) */
+    --line-width: 1px;          /* Line thickness */
+    --line-spacing: 15px;       /* Distance between start of lines (adjust density) */
+
+    background-color: var(--bg-color); /* Base background color */
+    background-image:
+        /* Diagonal lines (e.g., top-left to bottom-right) */
+        repeating-linear-gradient(
+            45deg,
+            var(--line-color),                               /* Line color starts */
+            var(--line-color) var(--line-width),             /* Line color ends after width */
+            transparent var(--line-width),                   /* Transparent starts */
+            transparent var(--line-spacing)                  /* Transparent ends before next line */
+        ),
+        /* Diagonal lines opposite direction (e.g., top-right to bottom-left) */
+        repeating-linear-gradient(
+            -45deg, /* You could also use 135deg */
+            var(--line-color),
+            var(--line-color) var(--line-width),
+            transparent var(--line-width),
+            transparent var(--line-spacing)
+        );
+
 }
 
 
@@ -18,9 +41,9 @@ body {
     margin: auto; /* Example: 30px margin top/bottom, auto left/right centers it */
 
     /* Styling - Add your desired styles */
-    border: 2px dotted black; /* Example border */
+    border: 2px double black; /* Example border */
    
-    
+    background-color: white;
 
     /* Ensure proper box model */
     box-sizing: border-box;
@@ -41,6 +64,8 @@ body {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+    z-index: 20;
+    image-rendering: pixelated;
 }
 
 #action-link {
@@ -60,8 +85,9 @@ body {
 #descend-gif {
  
     position: absolute;
-    z-index: -1;
+    z-index: 2;
     max-width: 100%;
+    image-rendering: pixelated;
 }
 
 .hidden {
@@ -86,6 +112,8 @@ body {
 
 #scroll-image {
      max-width: 100%;
+    z-index: 20;
+    image-rendering: pixelated;
 }
 
 /* Styling for the new button */
@@ -95,7 +123,7 @@ body {
     left: 50%;          /* Center horizontally */
 
     cursor: pointer;
-    z-index: 10; /* Ensure button is above the image */
+    z-index: 500; /* Ensure button is above the image */
     
      font-size: 24px;
     font-family: "Times New Roman", Times, serif;
