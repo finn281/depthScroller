@@ -12,6 +12,12 @@ const deeperButton = document.getElementById('deeper-button');
 
 // --- Frame Control Configuration ---
 // !! YOU NEED TO SET THESE VALUES !!
+const frameSoundPlayer = document.getElementById('frame-sound');
+const soundFolderPath = "frameSounds/"; // Adjust if needed
+const soundBaseName = "sound_";       // Adjust if needed
+const soundExtension = ".mp3";        // Adjust if needed (.wav, .ogg etc.)
+
+
 const frameBaseName = "frameScroll/frame_";     // Base filename for your frames
 const frameExtension = ".png";      // File extension for your frames
 const totalFrames = 20;             // TOTAL number of frames (e.g., 50 for frame_0 to frame_49)
@@ -63,9 +69,25 @@ deeperButton.addEventListener('click', function() {
 
     // Construct the new image source path
     const newSrc = frameBaseName + currentFrame + frameExtension;
+    const soundSrc = soundFolderPath + soundBaseName + currentFrame + soundExtension;
 
     // Update the image source
     scrollImage.src = newSrc;
+    
+    
+    if (frameSoundPlayer) {
+        frameSoundPlayer.src = soundSrc; // Set the source for the current frame's sound
+        // Optional: frameSoundPlayer.load(); // May help ensure src is ready
+        frameSoundPlayer.currentTime = 0; // Rewind (stops previous sound if src changed, restarts if same)
+        frameSoundPlayer.play().catch(error => {
+            // Autoplay restrictions might prevent playing without prior user interaction
+            // Log error or provide UI indication if sound fails
+            console.error("Frame sound playback failed:", error);
+        });
+        console.log("Playing sound:", soundSrc);
+    } else {
+        console.error("Frame sound player element not found!");
+    }
 
     console.log("Deeper button clicked. Showing frame:", currentFrame);
 });
