@@ -150,4 +150,49 @@ document.addEventListener('DOMContentLoaded', () => {
 // hideDialogue(); // Call once at start if not hidden by default in HTML
 
 
-/* RIDDLE */
+/* unchaining */
+// --- Minimal Logic for Final Scene Button ---
+
+// --- Logic for the final scene button ---
+
+// Get references to the specific button and the container it's in
+const unchainButton = document.getElementById('unchain-button');
+const finalContainer = document.getElementById('final-content-2');
+
+// Optional: Get references to other elements inside if you want to hide them
+const finalParagraph = finalContainer ? finalContainer.querySelector('p') : null;
+const leaveButton = document.getElementById('leave-chained-button');
+
+// Add event listener only if the button and container were found
+if (unchainButton && finalContainer) {
+
+    unchainButton.addEventListener('click', function() {
+        console.log("Disconnect / Unchain button clicked.");
+
+        // --- CORE ACTION: Change the container's background image style ---
+        finalContainer.style.backgroundImage = "url('unchained.gif')"; // Adjust path if needed
+        // --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+        // Optional: Adjust other background properties if the GIF needs different settings
+        // Example: finalContainer.style.backgroundSize = 'contain';
+        // Example: finalContainer.style.backgroundPosition = 'center center';
+
+        // Optional: Hide the paragraph and buttons to just show the GIF background
+        if (finalParagraph) {
+            finalParagraph.style.display = 'none';
+        }
+        if (unchainButton) {
+            unchainButton.style.display = 'none';
+        }
+        if (leaveButton) {
+            leaveButton.style.display = 'none';
+        }
+    });
+
+} else {
+    // Log errors if elements crucial for this step are missing
+    if (!unchainButton) console.error("Button with ID 'unchain-button' not found.");
+    if (!finalContainer) console.error("Container with ID 'final-content-2' not found.");
+}
+
+// --- All other previous JavaScript is omitted ---

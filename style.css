@@ -34,7 +34,7 @@ body {
 
 
 #title-text {
-    font-size: 170px;
+ 
     color: black;
     margin: 5px;
     text-align: center;
@@ -124,7 +124,7 @@ body {
     width: 60%;     /* Example: Make text area 60% of puzzle div's width */
     margin: 0; /* Reset default paragraph margin */
     font-family: "Times New Roman", Times, serif; /* Or your preferred font */
-    font-size: 14px; /* Adjust size */
+    /*font-size: 14px; /* Adjust size */
     line-height: 1.3; /* Adjust line spacing if text wraps */
     color: #000000; /* Adjust color */
     text-align: center;
@@ -150,6 +150,43 @@ body {
     
 }
 
+
+#final-content-2 {
+    position: relative;
+    display: block; /* Or inline-block if needed for centering in parent */
+    width: 1080px;
+    height: 1080px;
+    max-width: 100%; /* Keep for responsiveness, but be aware it can shrink the div */
+    margin: 0 auto; /* Example: Center the block itself if parent is wider */
+    box-sizing: border-box; /* Good practice */
+
+    /* --- Explicit Background Control --- */
+    background-image: url('chained.png'); /* Initial image */
+    background-size: contain; /* Scale image down to fit, preserving aspect ratio */
+    background-position: center center; /* Center the image horizontally and vertically */
+    background-repeat: no-repeat; /* Prevent tiling */
+    /* --- --- --- --- --- --- --- --- --- */
+
+    text-align: center; /* For inline content like text/buttons inside */
+    image-rendering: pixelated; /* Apply to rendering of element/background */
+    z-index: 20;
+    overflow: hidden; /* Prevent content (like buttons) spilling out if needed */
+}
+
+/* Styles for text/buttons inside remain the same */
+#final-content-2 p { /* Example targeting the <p> */
+   position: relative; /* Allows z-index if needed */
+   z-index: 1; /* Keep text above background */
+   /* ... other styles */
+}
+#final-content-2 button { /* Example targeting buttons */
+   position: relative; /* Allows z-index */
+   z-index: 1; /* Keep buttons above background */
+   /* ... other styles */
+}
+
+
+
 #action-link {
     position: absolute;
     top: 70%;
@@ -159,7 +196,7 @@ body {
     color: blue;
     text-decoration: underline;
     cursor: pointer;
-    font-size: 24px;
+    /* font-size: 24px; */
     padding: 5px;
     z-index: 500;
 }
@@ -207,7 +244,7 @@ body {
     cursor: pointer;
     z-index: 500; /* Ensure button is above the image */
     
-     font-size: 24px;
+     /*font-size: 24px;*/
     font-family: "Times New Roman", Times, serif;
     color: blue;
     text-decoration: underline;
@@ -243,7 +280,7 @@ table, th, td {
     /* Text styling within the dialogue window */
     color: blue;
     font-family: "Times New Roman", Times, serif; /* Example font */
-    font-size: 24px;
+    /*font-size: 24px;*/
 }
 
 /* Optional styling for the dialogue text paragraph */
@@ -254,6 +291,6 @@ table, th, td {
 /* Optional styling for the next button */
 #dialogue-next {
     
-    font-size: 24px;
+    /*font-size: 24px;*/
     cursor: pointer;
 }
