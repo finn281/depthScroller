@@ -148,3 +148,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // --- Make sure dialogue starts hidden (redundant if class is in HTML, but safe) ---
 // hideDialogue(); // Call once at start if not hidden by default in HTML
+
+
+/* RIDDLE */

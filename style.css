@@ -1,5 +1,5 @@
 /* Removed: html { scroll-behavior: smooth; } */
-
+ @import url("https://use.typekit.net/efj2kvt.css");
 body {
 
     margin: 0;
@@ -85,6 +85,56 @@ body {
     image-rendering: pixelated;
 }
 
+@keyframes hoverUpDown {
+    0% {
+        transform: translateY(0); /* Start at original position */
+    }
+    50% {
+        /* Move up slightly - adjust px value for distance */
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0); /* Return to original position */
+    }
+}
+
+/* Style the container for the puzzle image */
+#puzzle {
+    display: inline-block;
+    position: relative; /* Make this the containing block for absolute children */
+    margin-bottom: 20px;
+    /* Animation styles remain the same */
+    animation: hoverUpDown 2.5s ease-in-out infinite;
+}
+
+/* Ensure the image inside doesn't interfere strangely with overlay */
+#puzzle img {
+    display: block;
+    /* image-rendering: pixelated; */ /* Keep if needed */
+    /* Make sure image isn't positioned absolutely itself */
+    position: relative; /* Or static (default) */
+    z-index: 0; /* Base layer within #puzzle */
+}
+
+/* NEW: Styles for the overlay text */
+#text-in-frame {
+    position: absolute; /* Position relative to #puzzle */
+    top: 200px;       /* Example: Start 35% from the top of the puzzle div */
+    left: 20%;      /* Example: Start 20% from the left */
+    width: 60%;     /* Example: Make text area 60% of puzzle div's width */
+    margin: 0; /* Reset default paragraph margin */
+    font-family: "Times New Roman", Times, serif; /* Or your preferred font */
+    font-size: 14px; /* Adjust size */
+    line-height: 1.3; /* Adjust line spacing if text wraps */
+    color: #000000; /* Adjust color */
+    text-align: center;
+    z-index: 100; /* Ensure text is layered above the image (img has z-index 0 or is static) */
+
+    /* Optional: Prevents text from blocking mouse events on image below */
+    /* pointer-events: none; */
+}
+
+
 #final-content {
     display: block;
     max-width: 100%;
@@ -93,6 +143,10 @@ body {
     z-index: 20;
     image-rendering: pixelated;
     text-align: center;
+    background-image: url(cave.png);
+    width: 1080px;
+    height: 584px;
+    image-rendering: pixelated;
     
 }
 
