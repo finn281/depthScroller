@@ -161,7 +161,7 @@ body {
     box-sizing: border-box; /* Good practice */
 
     /* --- Explicit Background Control --- */
-    background-image: url('finalSpot.png'); /* Initial image */
+    background-image: url('finalCave.png'); /* Initial image */
     background-size: contain; /* Scale image down to fit, preserving aspect ratio */
     background-position: center 0; /* Center the image horizontally and vertically */
     background-repeat: no-repeat; /* Prevent tiling */
