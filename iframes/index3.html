@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recursive Border</title>
+    <style>
+        
+        body {
+            width: 266px;
+            height: 306px;
+            background-image: url(snake.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+             image-rendering: pixelated;
+            overflow: visible;
+            animation: hoverUpDown 2.5s ease-in-out infinite;
+        }
+        
+        .recursion {
+            width: 266px;
+            height: 306px;
+            border: none;
+       
+            overflow: visible;
+        }
+        
+        .container {
+            position: relative;
+            top: 0;
+        }
+        
+        @keyframes hoverUpDown {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        /* Move up slightly - adjust px value for distance */
+        transform: rotate(90deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+        
+    </style>
+</head>
+<body>
+    
+      
+            <iframe class="recursion" src="recursive-iFrame.html"></iframe>
+      
+    
+  
+
+</body>
+</html>

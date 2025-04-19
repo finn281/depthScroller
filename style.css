@@ -155,15 +155,15 @@ body {
     position: relative;
     display: block; /* Or inline-block if needed for centering in parent */
     width: 1080px;
-    height: 1080px;
+    height: 1300px;
     max-width: 100%; /* Keep for responsiveness, but be aware it can shrink the div */
     margin: 0 auto; /* Example: Center the block itself if parent is wider */
     box-sizing: border-box; /* Good practice */
 
     /* --- Explicit Background Control --- */
-    background-image: url('chained.png'); /* Initial image */
+    background-image: url('finalSpot.png'); /* Initial image */
     background-size: contain; /* Scale image down to fit, preserving aspect ratio */
-    background-position: center center; /* Center the image horizontally and vertically */
+    background-position: center 0; /* Center the image horizontally and vertically */
     background-repeat: no-repeat; /* Prevent tiling */
     /* --- --- --- --- --- --- --- --- --- */
 
@@ -172,6 +172,8 @@ body {
     z-index: 20;
     overflow: hidden; /* Prevent content (like buttons) spilling out if needed */
 }
+
+
 
 /* Styles for text/buttons inside remain the same */
 #final-content-2 p { /* Example targeting the <p> */
