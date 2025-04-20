@@ -111,15 +111,22 @@ body {
     
     position: relative; /* Make this the containing block for absolute children */
     height:  60%;
-  
+    width: 100%;
     
     
 }
 #egg {
     position: absolute;
-    bottom: 10px;
-    left: 365px;
-    z-index: 1000000;
+    /* 1. Position top-left corner of image to parent's center */
+    top: 75%;
+    left: 50%;
+    /* 2. Translate image back by 50% of its OWN width and height */
+    transform: translate(-50%, -50%);
+
+    /* Keep other styles */
+    z-index: 1000000; /* Consider if this needs to be so high */
+    cursor: pointer;
+    display: block; /* Good practice for images */
 }
 
 /* Ensure the image inside doesn't interfere strangely with overlay */

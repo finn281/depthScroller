@@ -195,4 +195,30 @@ if (unchainButton && finalContainer) {
     if (!finalContainer) console.error("Container with ID 'final-content-2' not found.");
 }
 
+
+// egg
+
+const eggImage = document.getElementById('egg');
+
+// Check if the element exists before adding a listener
+if (eggImage) {
+    eggImage.addEventListener('click', function() {
+        // --- ACTION TO PERFORM WHEN EGG IS CLICKED ---
+
+        // Example 1: Log a message to the console
+        console.log("The egg was clicked!");
+
+        // Example 2: Show a dialogue message
+        // showDialogue("A mysterious, smooth egg. It feels cold."); // Assuming showDialogue function exists
+
+        // Example 3: Trigger another animation or game logic
+        // startEggCrackingSequence(); // A function you would define elsewhere
+
+        // --- Add the specific action you want here ---
+
+    });
+} else {
+    console.error("Element with ID 'egg' not found!");
+}
+
 // --- All other previous JavaScript is omitted ---
