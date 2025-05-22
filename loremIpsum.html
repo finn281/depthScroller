@@ -3,65 +3,83 @@
 <head>
     <title>Recursive Border</title>
     <style>
+ 
+        
+        /*
+        ::-webkit-scrollbar {
+  width: 75px;
+}
+
+
+::-webkit-scrollbar-track {
+  background-image: url(bar_bg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background-image: url(bar_click.png);
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+}
         body {
             width: 1000vw;
             overflow-x: scroll;
             overflow-y: scroll;
         }
         
-        /* Container for the randomly positioned image */
-        #random-image-container {
-        position: relative; /* Establishes positioning context */
-        width: 90%;       /* Example: Give the container a size */
-        height: 90%;    /* Example: Give the container a size */
-        margin: 20px auto;/* Example: Center container */
-        border: 1px dashed blue; /* Optional: To visualize the container */
-        overflow: hidden; /* Optional: Hide parts of image outside bounds */
-}
-
-/* The image that will be moved */
-        #random-image {
-        position: absolute; /* Allows positioning with top/left */
-        /* Initial position (optional, will be overridden by JS) */
-        top: 0;
-        left: 0;
-        /* Add other image styles */
-        max-width: 269px; /* Example: Control image size */
-        height: auto;
-        display: block;
-        image-rendering: pixelated; /* Keep if needed */
-}
-        
+    
+        #text-container {
+            position: relative;
+            width: 1000vw;
+            height: auto;
+        }
+        */
     </style>
     
     <script>
         
     window.addEventListener('load', function() {
+    const image = document.getElementById('random-image');
+    const container = document.getElementById('text-container');
+        
+    if (image) {
+        // Ensure the image is absolutely positioned (can also be set in CSS)
+        image.style.position = 'absolute';
 
-        const container = document.getElementById('random-image-container');
-        const image = document.getElementById('random-image');
+        // Generate random top and left percentages (0 to nearly 100)
+        const randomTopPercent = Math.random(1);
+        const randomLeftPercent = Math.random() * 1000;
         
-            const containerWidth = container.clientWidth;
-            const containerHeight = container.clientHeight;
-            
-            const maxLeft = Math.max(0, containerWidth - imageWidth);
-            const maxTop = Math.max(0, containerHeight - imageHeight);
+        const containerHeight = container.clientHeight;
         
-            const randomLeft = Math.random() * maxLeft;
-            const randomTop = Math.random() * maxTop;
-        
-        image.style.left = Math.floor(randomLeft) + 'px';
-        image.style.top = Math.floor(randomTop) + 'px';
+        // Apply the random positions as percentages
+        image.style.top = randomTopPercent * containerHeight + 'px';
+        image.style.left = randomLeftPercent + 'vw';
+
+        // Optional: To prevent the image center from going off edge, adjust range:
+        // const randomTopPercent = Math.random() * (100 - (image.offsetHeight / image.parentElement.clientHeight * 100));
+        // const randomLeftPercent = Math.random() * (100 - (image.offsetWidth / image.parentElement.clientWidth * 100));
+        // (This requires parentElement dimensions and gets more complex)
+
 
         console.log(`Image positioned at: top=${image.style.top}, left=${image.style.left}`);
+
+    } else {
+        console.error("Image '#random-image' not found.");
+    }
+});
+
 
     </script>
 </head>
 <body>
-      <div id="random-image-container">
-        <img id="random-image" src="your-image.png" alt="Randomly placed image">
-        </div>
-      
+      <div id="some-container" style="position: absolute; width: 1000vw; height: auto;"> 
+          <img id="random-image" src="egg.png" alt="Random" style="position: absolute; z-index: 1000;">
+</div>
+      <div id="text-container">
             <p>
     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.  
 
@@ -2428,7 +2446,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
     
     </p>
         
-    
+    </div>
   
 
 </body>

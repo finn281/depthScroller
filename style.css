@@ -33,6 +33,9 @@ body {
 }
 
 
+
+
+
 #title-text {
  
     color: black;
@@ -201,6 +204,23 @@ body {
     overflow: hidden; /* Prevent content (like buttons) spilling out if needed */
 }
 
+#final-content-3 {
+    position: relative;
+    display: block; /* Or inline-block if needed for centering in parent */
+    width: 1080px;
+    height: 1300px;
+    max-width: 100%; /* Keep for responsiveness, but be aware it can shrink the div */
+    margin: 0 auto; /* Example: Center the block itself if parent is wider */
+    box-sizing: border-box; /* Good practice */
+
+    
+}
+
+#lorem {
+    width: 100%;
+    height: 100vh;
+}
+
 
 
 /* Styles for text/buttons inside remain the same */
@@ -255,7 +275,19 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden; /* Important to contain elements */
-  
+}
+
+#scroll-target-area2 {
+    /* Center content (like the GIF if it's not 100% width) */
+    text-align: center;
+    box-sizing: border-box;
+    /* Ensure it takes up width, height defined by content */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Important to contain elements */
+    image-rendering: pixelated;
 }
 
 

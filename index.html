@@ -26,10 +26,16 @@
             <audio id="click-sound" src="click_sound.mp3" preload="auto"></audio>
         </div>
 
-        <div id="scroll-target-area">
+        <!--<div id="scroll-target-area">
             <img id="scroll-image" src="frameScroll/frame_0.png" alt="Scrolling background content">
             <button id="deeper-button">go deeper</button>
             <audio id="frame-sound" preload="auto"></audio>
+            
+        </div> -->
+         
+         <div id="scroll-target-area2">
+            <img id="scroll-image" src="scroll.png" alt="Scrolling background content">
+         
             
         </div>
          
@@ -37,8 +43,13 @@
                <div id="puzzle">
                     <img src="Puzzle.png" alt="Puzzle element">
                     <form id="text-in-frame">
-                        <label for="fname">Riddle Question?</label><br>
-                        <input type="text" id="fname" name="fname"><br> <input type="submit" value="Submit">
+                        <!-- <label for="fname">I am not a robot</label><br> -->
+                        
+                        <input type="checkbox" id="robot" name="robot1" value="robotBool">
+                        <label for="vehicle1"> I'm not a robot</label><br>
+                         <input type="submit" value="Submit">
+                        
+                        <!--<input type="text" id="fname" name="fname"><br> <input type="submit" value="Submit"> -->
                     </form>
                    
                 </div>
@@ -55,6 +66,12 @@
              <button id="leave-chained-button"> Leave them</button>
              <button id="unchain-button"> Disconnect them</button>
          
+         </div>
+         
+         <div id="final-content-3">
+         
+             <iframe src="loremIpsum.html" id="lorem"></iframe>
+            
          </div>
          
     </div>
