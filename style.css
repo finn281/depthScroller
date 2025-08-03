@@ -11,24 +11,23 @@ body {
     --line-width: 1px;          /* Line thickness */
     --line-spacing: 15px;       /* Distance between start of lines (adjust density) */
 
-    background-color: var(--bg-color); /* Base background color */
-    background-image:
-        /* Diagonal lines (e.g., top-left to bottom-right) */
+    background-color: #dbdbdb;/* var(--bg-color);  Base background color */
+    /*background-image:
         repeating-linear-gradient(
             45deg,
-            var(--line-color),                               /* Line color starts */
-            var(--line-color) var(--line-width),             /* Line color ends after width */
-            transparent var(--line-width),                   /* Transparent starts */
-            transparent var(--line-spacing)                  /* Transparent ends before next line */
+            var(--line-color),                               
+            var(--line-color) var(--line-width),     
+            transparent var(--line-width),                  
+            transparent var(--line-spacing)                  
         ),
-        /* Diagonal lines opposite direction (e.g., top-right to bottom-left) */
+    
         repeating-linear-gradient(
-            -45deg, /* You could also use 135deg */
+            -45deg,
             var(--line-color),
             var(--line-color) var(--line-width),
             transparent var(--line-width),
             transparent var(--line-spacing)
-        );
+        ); */
 
 }
 
@@ -108,6 +107,40 @@ body {
     margin-bottom: 20px;
     /* Animation styles remain the same */
     animation: hoverUpDown 2.5s ease-in-out infinite;
+}
+
+#roomDiv {
+    display: block;
+    max-width: 100%;
+    margin: auto;
+    object-fit: contain;
+    z-index: 20;
+    image-rendering: pixelated;
+    text-align: center;
+    background-image: url(animationRoom2.gif);
+   
+    background-position: center 0; /* Center the image horizontally and vertically */
+    background-repeat: no-repeat; /* Prevent tiling */
+    width: 1080px;
+    height: 750px;
+    image-rendering: pixelated;
+}
+
+#roomDiv2 {
+    display: block;
+    max-width: 100%;
+    margin: auto;
+    object-fit: contain;
+    z-index: 20;
+    image-rendering: pixelated;
+    text-align: center;
+    background-image: url(room4border.png);
+    background-size: cover; /* Scale image down to fit, preserving aspect ratio */
+    background-position: center 0; /* Center the image horizontally and vertically */
+    background-repeat: no-repeat; /* Prevent tiling */
+    width: 1080px;
+    height: 750px;
+    image-rendering: pixelated;
 }
 
 #eggDiv {
@@ -279,7 +312,7 @@ body {
 
 #scroll-target-area2 {
     /* Center content (like the GIF if it's not 100% width) */
-    text-align: center;
+
     box-sizing: border-box;
     /* Ensure it takes up width, height defined by content */
     position: relative;
@@ -289,6 +322,24 @@ body {
     overflow: hidden; /* Important to contain elements */
     image-rendering: pixelated;
 }
+
+.overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10; 
+    
+}
+
+form {
+            background-color: whites;
+            height: auto;
+        
+            border: solid 1px black;
+            padding: 15px;
+            font: sans-serif;
+        }
 
 
 #scroll-image {
