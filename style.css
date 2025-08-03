@@ -335,16 +335,16 @@ body {
 form {
             background-color: whites;
             height: auto;
-        
             border: solid 1px black;
             padding: 15px;
             font: sans-serif;
+            z-index: 9999999999999;
         }
 
 
 #scroll-image {
      max-width: 100%;
-    z-index: 20;
+    z-index: 0;
     image-rendering: pixelated;
 }
 
